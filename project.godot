@@ -14,6 +14,10 @@ config/name="Tgd-jame-gam-christmas-edition"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerData="*res://autoloads/PlayerData.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
