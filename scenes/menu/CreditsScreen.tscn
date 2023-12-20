@@ -15,6 +15,7 @@ theme = ExtResource("1_moinm")
 script = ExtResource("1_rmg0y")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 grow_horizontal = 2

@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://byv4jxfwaco5f"]
+[gd_scene load_steps=5 format=3 uid="uid://bipw2hsxwlnce"]
 
 [ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="1_fu0xl"]
 [ext_resource type="Script" path="res://src/CharacterBody2D.gd" id="1_swlod"]
+[ext_resource type="PackedScene" uid="uid://dt1tf8k3v7p1b" path="res://scenes/levels/parallaxes/night_parallax_background.tscn" id="3_ygeoi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su6xv"]
 size = Vector2(64, 64)
 
 [node name="World" type="Node2D"]
+
+[node name="NightParallaxBackground" parent="." instance=ExtResource("3_ygeoi")]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(0, 401)
