@@ -1,8 +1,10 @@
-extends Node2D
+extends Control
 
 
 
-
+func _ready():
+	await get_tree().create_timer(1.0).timeout
+	$VBox/BtnPlay1.grab_focus()
 
 
 func _on_btn_play_1_pressed():

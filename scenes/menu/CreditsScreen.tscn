@@ -1,12 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgshrp658sobl"]
+[gd_scene load_steps=4 format=3 uid="uid://dgshrp658sobl"]
 
 [ext_resource type="Theme" uid="uid://bu1vjxpo7ad1g" path="res://resources/themes/default.tres" id="1_moinm"]
 [ext_resource type="Script" path="res://scenes/menu/CreditsScreen.gd" id="1_rmg0y"]
+[ext_resource type="Texture2D" uid="uid://dxwprbvyxl4h3" path="res://assets/images/christian-lue-lHar9qDZPyI-unsplash-blur.png" id="3_p7t7p"]
 
-[node name="CreditsScreen" type="Node2D"]
-script = ExtResource("1_rmg0y")
-
-[node name="Control" type="Control" parent="."]
+[node name="CreditsScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,8 +12,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_moinm")
+script = ExtResource("1_rmg0y")
 
-[node name="BtnReturn" type="Button" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_p7t7p")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 302.0
+offset_right = 639.0
+offset_bottom = 325.0
+text = "credits go here"
+
+[node name="BtnReturn" type="Button" parent="."]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 16.0
@@ -23,12 +38,4 @@ offset_right = 122.0
 offset_bottom = 64.0
 text = "Return"
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 513.0
-offset_top = 302.0
-offset_right = 639.0
-offset_bottom = 323.0
-text = "credits go here"
-
-[connection signal="pressed" from="Control/BtnReturn" to="." method="_on_btn_return_pressed"]
+[connection signal="pressed" from="BtnReturn" to="." method="_on_btn_return_pressed"]

@@ -1,4 +1,8 @@
-extends Node2D
+extends Control
+
+
+func _ready():
+	$BtnReturn.grab_focus()
 
 
 func _on_btn_return_pressed():

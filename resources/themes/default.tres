@@ -1,12 +1,53 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bu1vjxpo7ad1g"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bu1vjxpo7ad1g"]
 
 [ext_resource type="FontFile" uid="uid://du5vw5m8ahybj" path="res://assets/fonts/Mali-Medium.ttf" id="1_joube"]
 [ext_resource type="FontFile" uid="uid://dj6eas65cix2a" path="res://assets/fonts/Mali-Bold.ttf" id="2_xv8ko"]
 [ext_resource type="FontFile" uid="uid://cqnjb7o8x1ee5" path="res://assets/fonts/AbrilFatface-Regular.ttf" id="3_prnro"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wle2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdl17"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.643137, 0, 0.266667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btbcm"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.454902, 0, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+shadow_offset = Vector2(0, 4)
+
 [resource]
 Button/font_sizes/font_size = 30
 Button/fonts/font = ExtResource("1_joube")
+Button/styles/focus = SubResource("StyleBoxFlat_1wle2")
+Button/styles/hover = SubResource("StyleBoxFlat_tdl17")
+Button/styles/normal = SubResource("StyleBoxFlat_btbcm")
+Button/styles/pressed = null
 Label/fonts/font = ExtResource("2_xv8ko")
 TitleLabel/base_type = &"Label"
 TitleLabel/font_sizes/font_size = 60
