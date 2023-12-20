@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bu1vjxpo7ad1g"]
+
+[ext_resource type="FontFile" uid="uid://du5vw5m8ahybj" path="res://assets/fonts/Mali-Medium.ttf" id="1_joube"]
+[ext_resource type="FontFile" uid="uid://dj6eas65cix2a" path="res://assets/fonts/Mali-Bold.ttf" id="2_xv8ko"]
+[ext_resource type="FontFile" uid="uid://cqnjb7o8x1ee5" path="res://assets/fonts/AbrilFatface-Regular.ttf" id="3_prnro"]
+
+[resource]
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_joube")
+Label/fonts/font = ExtResource("2_xv8ko")
+TitleLabel/base_type = &"Label"
+TitleLabel/font_sizes/font_size = 60
+TitleLabel/fonts/font = ExtResource("3_prnro")

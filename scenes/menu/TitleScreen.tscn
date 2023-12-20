@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://2cr7pewmfk3o"]
+
+[ext_resource type="Script" path="res://scenes/menu/TitleScreen.gd" id="1_p0uv0"]
+[ext_resource type="Theme" uid="uid://bu1vjxpo7ad1g" path="res://resources/themes/default.tres" id="2_spf1l"]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_p0uv0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_spf1l")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 127.0
+offset_right = 778.0
+offset_bottom = 209.0
+theme_type_variation = &"TitleLabel"
+text = "James Games"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 315.0
+offset_right = 702.0
+offset_bottom = 519.0
+
+[node name="BtnPlay1" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Normal Night"
+
+[node name="BtnPlay2" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Hard Night"
+
+[node name="BtnPlay3" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Crazy Night"
+
+[node name="BtnCredits" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[connection signal="pressed" from="Control/VBoxContainer/BtnPlay1" to="." method="_on_btn_play_1_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/BtnPlay2" to="." method="_on_btn_play_2_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/BtnPlay3" to="." method="_on_btn_play_3_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/BtnCredits" to="." method="_on_btn_credits_pressed"]
