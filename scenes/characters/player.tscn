@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://w43wv2ukh5r2"]
+
+[ext_resource type="Script" path="res://src/Player.gd" id="1_ptvvu"]
+[ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="2_t064j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su6xv"]
+size = Vector2(158, 106)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ptvvu")
+
+[node name="SpriteSantaClaus" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_t064j")
+
+[node name="SpriteSled" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(0, 39.5)
+scale = Vector2(1.20313, 0.382813)
+texture = ExtResource("2_t064j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_su6xv")

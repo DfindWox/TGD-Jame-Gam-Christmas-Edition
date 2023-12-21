@@ -20,3 +20,9 @@ func _physics_process(delta):
 	else:
 		velocity = input_vector * SPEED
 	move_and_slide()
+	
+	# limitar movimento
+	if global_position.x < 80:
+		global_position.x = 80
+	if global_position.x > 900:
+		global_position.x = 900
