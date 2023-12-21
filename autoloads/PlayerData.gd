@@ -16,7 +16,8 @@ func reset_game() -> void:
 	score = 0
 	strikes = 0
 
-## Score aumenta de 100 em 100, pelo psicológico de número maior ser melhor.
+## Se o modo é infinito, score aumenta de 100 em 100, pelo psicológico de número maior ser melhor.
+## senão, basta aumentar de um em um
 func add_score() -> void:
 	score += 100
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="1_fu0xl"]
 [ext_resource type="Script" path="res://src/CharacterBody2D.gd" id="1_swlod"]
-[ext_resource type="PackedScene" uid="uid://dt1tf8k3v7p1b" path="res://scenes/levels/parallaxes/night_parallax_background.tscn" id="3_ygeoi"]
+[ext_resource type="PackedScene" uid="uid://dt1tf8k3v7p1b" path="res://scenes/levels/parallaxes/NightParallaxBackground.tscn" id="3_ygeoi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su6xv"]
 size = Vector2(64, 64)

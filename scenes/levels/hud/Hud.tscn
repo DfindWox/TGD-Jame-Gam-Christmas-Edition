@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://byxx6xjtmttns"]
+
+[ext_resource type="Theme" uid="uid://bu1vjxpo7ad1g" path="res://resources/themes/default.tres" id="1_jkphe"]
+[ext_resource type="Script" path="res://scenes/levels/hud/Hud.gd" id="2_i7xkb"]
+[ext_resource type="Texture2D" uid="uid://rwp1t86e7k6i" path="res://assets/images/icons8-present-100.png" id="3_kuim1"]
+[ext_resource type="Texture2D" uid="uid://drgo5el3u62ys" path="res://assets/images/icons8-anvil-60.png" id="4_dgpr3"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jkphe")
+script = ExtResource("2_i7xkb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Presents" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(290, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Presents"]
+layout_mode = 2
+texture = ExtResource("3_kuim1")
+stretch_mode = 2
+
+[node name="LabelPresentsCount" type="Label" parent="MarginContainer/VBoxContainer/Presents"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 2
+
+[node name="LabelPresentsMaxCount" type="Label" parent="MarginContainer/VBoxContainer/Presents"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 40
+text = " / 50"
+horizontal_alignment = 2
+
+[node name="StrikesBar" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="StrikesBarBack" type="TextureRect" parent="MarginContainer/VBoxContainer/StrikesBar"]
+modulate = Color(0, 0, 0, 0.301961)
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+offset_right = 180.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_dgpr3")
+stretch_mode = 1
+
+[node name="StrikesBarFront" type="TextureRect" parent="MarginContainer/VBoxContainer/StrikesBar"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_bottom = 60.0
+size_flags_horizontal = 0
+texture = ExtResource("4_dgpr3")
+expand_mode = 1
+stretch_mode = 1
