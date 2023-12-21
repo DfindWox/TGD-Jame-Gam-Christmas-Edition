@@ -26,8 +26,6 @@ texture = ExtResource("1_fu0xl")
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_su6xv")
 
-[node name="Hud" parent="." instance=ExtResource("4_xsqiq")]
-
 [node name="Villain" type="CharacterBody2D" parent="."]
 position = Vector2(1088, 180)
 collision_layer = 0
@@ -45,5 +43,7 @@ autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="Villain"]
 position = Vector2(-64, 64)
+
+[node name="Hud" parent="." instance=ExtResource("4_xsqiq")]
 
 [connection signal="timeout" from="Villain/Timer" to="Villain" method="_on_timer_timeout"]

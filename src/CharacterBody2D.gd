@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	var input_vector = Vector2(
 		Input.get_axis("move_left", "move_right"),
-		Input.get_axis("move_up", "move_down")
+		0 #Input.get_axis("move_up", "move_down") # sem movimento vertical
 		).normalized()
 	
 	# fever
