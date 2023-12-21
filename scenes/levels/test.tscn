@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bipw2hsxwlnce"]
+[gd_scene load_steps=6 format=3 uid="uid://bipw2hsxwlnce"]
 
 [ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="1_fu0xl"]
 [ext_resource type="Script" path="res://src/CharacterBody2D.gd" id="1_swlod"]
 [ext_resource type="PackedScene" uid="uid://dt1tf8k3v7p1b" path="res://scenes/levels/parallaxes/NightParallaxBackground.tscn" id="3_ygeoi"]
+[ext_resource type="PackedScene" uid="uid://byxx6xjtmttns" path="res://scenes/levels/hud/Hud.tscn" id="4_xsqiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su6xv"]
 size = Vector2(64, 64)
@@ -11,15 +12,17 @@ size = Vector2(64, 64)
 
 [node name="NightParallaxBackground" parent="." instance=ExtResource("3_ygeoi")]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(0, 401)
 script = ExtResource("1_swlod")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(32, 32)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_fu0xl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_su6xv")
+
+[node name="Hud" parent="." instance=ExtResource("4_xsqiq")]
