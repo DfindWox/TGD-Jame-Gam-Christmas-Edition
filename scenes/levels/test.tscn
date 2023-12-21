@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bipw2hsxwlnce"]
+[gd_scene load_steps=7 format=3 uid="uid://bipw2hsxwlnce"]
 
 [ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="1_fu0xl"]
 [ext_resource type="Script" path="res://src/CharacterBody2D.gd" id="1_swlod"]
 [ext_resource type="PackedScene" uid="uid://dt1tf8k3v7p1b" path="res://scenes/levels/parallaxes/NightParallaxBackground.tscn" id="3_ygeoi"]
 [ext_resource type="PackedScene" uid="uid://byxx6xjtmttns" path="res://scenes/levels/hud/Hud.tscn" id="4_xsqiq"]
+[ext_resource type="Script" path="res://src/Villain.gd" id="5_ipawc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su6xv"]
 size = Vector2(64, 64)
@@ -26,3 +27,23 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_su6xv")
 
 [node name="Hud" parent="." instance=ExtResource("4_xsqiq")]
+
+[node name="Villain" type="CharacterBody2D" parent="."]
+position = Vector2(1088, 180)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("5_ipawc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Villain"]
+modulate = Color(1, 0.235294, 0.180392, 1)
+texture = ExtResource("1_fu0xl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Villain"]
+
+[node name="Timer" type="Timer" parent="Villain"]
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="Villain"]
+position = Vector2(-64, 64)
+
+[connection signal="timeout" from="Villain/Timer" to="Villain" method="_on_timer_timeout"]
