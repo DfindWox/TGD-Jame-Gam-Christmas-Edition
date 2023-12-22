@@ -11,6 +11,7 @@ enum Type {PRESENT, ANVIL}
 
 func _ready():
 	set_sprite()
+	$sfx_falling.play()
 
 
 func set_sprite():
@@ -22,3 +23,16 @@ func set_sprite():
 			$Sprite2D.texture = texture_anvil
 			$Sprite2D.scale = Vector2(1,1)*1.2
 	#print_debug($Sprite2D.scale)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	if item_type == Type.ANVIL:
+		$sfx_anvil.play()
+		PlayerData.add_strike()
+	elif item_type == Type.PRESENT:
+		$sfx_happy.play()
+		PlayerData.add_score()
+	
+	# esperar um segundo antes de deletar
+	await get_tree().create_timer(1.0).timeout
+	queue_free()
