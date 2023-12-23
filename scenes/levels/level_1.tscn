@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1jkst7r3wnxg"]
+
+[ext_resource type="Script" path="res://scenes/levels/Level.gd" id="1_y2sx7"]
+[ext_resource type="PackedScene" uid="uid://dt1tf8k3v7p1b" path="res://scenes/levels/parallaxes/NightParallaxBackground.tscn" id="2_jyvii"]
+[ext_resource type="PackedScene" uid="uid://w43wv2ukh5r2" path="res://scenes/characters/player.tscn" id="3_kdhom"]
+[ext_resource type="PackedScene" uid="uid://bhvdavpxna35c" path="res://scenes/characters/villain.tscn" id="4_h1y7p"]
+[ext_resource type="PackedScene" uid="uid://byxx6xjtmttns" path="res://scenes/levels/hud/Hud.tscn" id="5_vj7cv"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_y2sx7")
+required_score = 20
+chance_for_anvil = 0.7
+throw_timer = 0.6
+
+[node name="NightParallaxBackground" parent="." instance=ExtResource("2_jyvii")]
+
+[node name="Player" parent="." instance=ExtResource("3_kdhom")]
+position = Vector2(135, 440)
+
+[node name="Villain" parent="." instance=ExtResource("4_h1y7p")]
+position = Vector2(998, 165)
+
+[node name="Hud" parent="." instance=ExtResource("5_vj7cv")]

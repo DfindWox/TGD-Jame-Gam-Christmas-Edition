@@ -34,6 +34,10 @@ func _on_timer_timeout():
 	$AnimationPlayer.play("throw")
 
 
+func set_timer_duration(duration):
+	$Timer.wait_time = duration
+
+
 func change_bullet_pattern():
 	# Random:
 	alternate_bullet = randi_range(1,3)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl0n4fiptpgea"]
+
+[ext_resource type="Script" path="res://scenes/levels/Level.gd" id="1_2l71l"]
+[ext_resource type="PackedScene" uid="uid://dt1tf8k3v7p1b" path="res://scenes/levels/parallaxes/NightParallaxBackground.tscn" id="2_fl13h"]
+[ext_resource type="PackedScene" uid="uid://w43wv2ukh5r2" path="res://scenes/characters/player.tscn" id="3_4av5d"]
+[ext_resource type="PackedScene" uid="uid://bhvdavpxna35c" path="res://scenes/characters/villain.tscn" id="4_b74qk"]
+[ext_resource type="PackedScene" uid="uid://byxx6xjtmttns" path="res://scenes/levels/hud/Hud.tscn" id="5_jibwx"]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_2l71l")
+
+[node name="NightParallaxBackground" parent="." instance=ExtResource("2_fl13h")]
+
+[node name="Player" parent="." instance=ExtResource("3_4av5d")]
+position = Vector2(135, 440)
+
+[node name="Villain" parent="." instance=ExtResource("4_b74qk")]
+position = Vector2(998, 165)
+
+[node name="Hud" parent="." instance=ExtResource("5_jibwx")]

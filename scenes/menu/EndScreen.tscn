@@ -1,0 +1,227 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0l0105o7l58f"]
+
+[ext_resource type="Theme" uid="uid://yxnf3f24u3jl" path="res://resources/themes/default.tres" id="1_pnnf8"]
+[ext_resource type="Script" path="res://scenes/menu/EndScreen.gd" id="2_uw0tx"]
+
+[sub_resource type="Animation" id="Animation_3qfny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Victory/BtnReturn:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(477.5, 340)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Victory/Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(391.5, -100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Victory/BtnReturn:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Victory/BtnRetry:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(478, 720)]
+}
+
+[sub_resource type="Animation" id="Animation_03d2a"]
+resource_name = "enter_victory"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Victory/BtnReturn:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(477.5, 800), Vector2(477.5, 340)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Victory/Label:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(391.5, -100), Vector2(391.5, 208)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Victory/BtnReturn:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Victory/BtnReturn")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"grab_focus"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_js34k"]
+resource_name = "enter_defeat"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Victory/BtnReturn:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(477.5, 800), Vector2(477.5, 340)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Victory/Label:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(391.5, -100), Vector2(391.5, 208)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Victory/BtnReturn:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Victory/BtnRetry:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(478, 720), Vector2(478, 260)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Victory/BtnRetry")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"grab_focus"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2gre"]
+_data = {
+"RESET": SubResource("Animation_3qfny"),
+"enter_defeat": SubResource("Animation_js34k"),
+"enter_victory": SubResource("Animation_03d2a")
+}
+
+[node name="EndScreen" type="CanvasLayer"]
+script = ExtResource("2_uw0tx")
+
+[node name="Victory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pnnf8")
+
+[node name="Label" type="Label" parent="Victory"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 391.5
+offset_top = -100.0
+offset_right = 760.5
+offset_bottom = -45.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="BtnRetry" type="Button" parent="Victory"]
+layout_mode = 2
+offset_left = 478.0
+offset_top = 720.0
+offset_right = 675.0
+offset_bottom = 792.0
+text = "Retry"
+
+[node name="BtnReturn" type="Button" parent="Victory"]
+visible = false
+layout_mode = 2
+offset_left = 477.5
+offset_top = 340.0
+offset_right = 674.5
+offset_bottom = 412.0
+text = "To Title"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w2gre")
+}
+
+[connection signal="pressed" from="Victory/BtnRetry" to="." method="_on_btn_retry_pressed"]
+[connection signal="pressed" from="Victory/BtnReturn" to="." method="_on_btn_return_pressed"]

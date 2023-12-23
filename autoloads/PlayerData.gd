@@ -41,9 +41,17 @@ func add_strike() -> void:
 func lose_game() -> void:
 	state = GameState.DEFEAT
 	player_lost.emit()
-	print_debug("VOCE PERDEU")
+	#print_debug("VOCE PERDEU")
+	await get_tree().create_timer(1.0).timeout
+	var end_screen = load("res://scenes/menu/EndScreen.tscn").instantiate()
+	end_screen.set_defeat()
+	get_tree().current_scene.add_child(end_screen)
 
 func win_game() -> void:
 	state = GameState.VICTORY
 	player_won.emit()
-	print_debug("VOCE VENCEU")
+	#print_debug("VOCE VENCEU")
+	await get_tree().create_timer(1.0).timeout
+	var end_screen = load("res://scenes/menu/EndScreen.tscn").instantiate()
+	end_screen.set_victory()
+	get_tree().current_scene.add_child(end_screen)
