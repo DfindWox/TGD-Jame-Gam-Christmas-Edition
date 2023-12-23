@@ -5,17 +5,33 @@ var bullet = preload("res://scenes/bullet.tscn")
 var alternate_bullet = 1
 var chance_for_anvil := 0.5 # 50%
 
+var dead := false
+var escaping := false
+
+
+func _ready():
+	PlayerData.player_lost.connect(_on_player_lost)
+	PlayerData.player_won.connect(_on_player_won)
+
+
 func _physics_process(delta):
+	
+	if dead:
+		position.y += delta*300
+		rotation_degrees += delta*720
+	
+	if escaping:
+		position.x += delta*200
+	
 	pass
 
 
 func _on_timer_timeout():
-	#test
+	if dead or escaping: return
+	
 	change_bullet_pattern()
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("throw")
-	
-	#throw_item()
 
 
 func change_bullet_pattern():
@@ -51,10 +67,15 @@ func throw_item():
 	get_tree().current_scene.add_child(inst_bullet)
 
 
-
-
-
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "throw":
 		$AnimationPlayer.play("idle")
 	pass # Replace with function body.
+
+func _on_player_won():
+	dead = true
+	pass
+
+func _on_player_lost():
+	escaping = true
+	pass

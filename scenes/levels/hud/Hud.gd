@@ -11,17 +11,18 @@ func _process(_delta):
 	# debug
 	#_test_ui(_delta)
 	
-	set_present_count(PlayerData.score/100.0)
+	set_present_count()
 	set_strike_count(PlayerData.strikes)
 
 
-func set_present_count(value):
-	%LabelPresentsCount.text = "%02d" % [value]
+func set_present_count():
+	%LabelPresentsCount.text = "%02d" % [PlayerData.score]
+	%LabelPresentsMaxCount.text = "/ %02d" % [PlayerData.required_score]
 
 
 func set_strike_count(value):
 	#print_debug("strikes: ", value)
-	%StrikesBarFront.size.x = clamp(value*128,0,128*3)
+	%StrikesBarFront.size.x = clamp(value*128,0,128*5)
 
 
 
