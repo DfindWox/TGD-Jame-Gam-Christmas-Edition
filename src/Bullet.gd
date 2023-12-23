@@ -8,6 +8,8 @@ var texture_present = preload("res://assets/images/Presentes_small.png")
 enum Type {PRESENT, ANVIL}
 @export var item_type : Type = Type.PRESENT
 
+## mudar para true quando o jogador bater nesse item
+var was_hit = false
 
 func _ready():
 	set_sprite()
@@ -26,12 +28,13 @@ func set_sprite():
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	if item_type == Type.ANVIL:
-		$sfx_anvil.play()
-		PlayerData.add_strike()
-	elif item_type == Type.PRESENT:
-		$sfx_happy.play()
-		PlayerData.add_score()
+	if not was_hit:
+		if item_type == Type.ANVIL:
+			$sfx_anvil.play()
+			PlayerData.add_strike()
+		elif item_type == Type.PRESENT:
+			$sfx_happy.play()
+			PlayerData.add_score()
 	
 	# esperar um segundo antes de deletar
 	await get_tree().create_timer(1.0).timeout
