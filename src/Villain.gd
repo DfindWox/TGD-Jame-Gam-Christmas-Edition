@@ -12,10 +12,9 @@ func _physics_process(delta):
 func _on_timer_timeout():
 	#test
 	change_bullet_pattern()
-	throw_item()
-	#change_bullet_pattern()
-	#throw_item()
-	#change_bullet_pattern()
+	$AnimationPlayer.stop()
+	$AnimationPlayer.play("throw")
+	
 	#throw_item()
 
 
@@ -53,3 +52,9 @@ func throw_item():
 
 
 
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "throw":
+		$AnimationPlayer.play("idle")
+	pass # Replace with function body.

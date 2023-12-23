@@ -1,9 +1,160 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhvdavpxna35c"]
+[gd_scene load_steps=16 format=3 uid="uid://bhvdavpxna35c"]
 
 [ext_resource type="Script" path="res://src/Villain.gd" id="1_fcj33"]
 [ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="2_k6gy8"]
+[ext_resource type="Texture2D" uid="uid://de5wbdja8o6fm" path="res://assets/images/Papai Noel Mal/BadSanta0000.png" id="3_fc4xv"]
+[ext_resource type="Texture2D" uid="uid://brfc8gibld2m3" path="res://assets/images/Papai Noel Mal/BadSanta0001.png" id="4_e5nn7"]
+[ext_resource type="Texture2D" uid="uid://dijnlyytn0qle" path="res://assets/images/Papai Noel Mal/BadSanta0002.png" id="5_2ke43"]
+[ext_resource type="Texture2D" uid="uid://bvru6auq123br" path="res://assets/images/Papai Noel Mal/BadSanta0003.png" id="6_70ho1"]
+[ext_resource type="Texture2D" uid="uid://c6yh4h1hpjwul" path="res://assets/images/Papai Noel Mal/BadSanta0004.png" id="7_7k0pp"]
+[ext_resource type="Texture2D" uid="uid://6w3d2pafs3ye" path="res://assets/images/Papai Noel Mal/BadSanta0005.png" id="8_yvfiu"]
+[ext_resource type="Texture2D" uid="uid://dd6g7klgh7vuk" path="res://assets/images/Papai Noel Mal/BadSanta0006.png" id="9_oh21p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wnl7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7gs1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fc4xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e5nn7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2ke43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ke43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ke43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ke43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ke43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ke43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_70ho1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7k0pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yvfiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oh21p")
+}],
+"loop": false,
+"name": &"throw",
+"speed": 24.0
+}]
+
+[sub_resource type="Animation" id="Animation_xrih4"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.19), Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+
+[sub_resource type="Animation" id="Animation_6f64w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_6hlkq"]
+resource_name = "throw"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"throw", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"throw_item"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jv21k"]
+_data = {
+"RESET": SubResource("Animation_6f64w"),
+"idle": SubResource("Animation_xrih4"),
+"throw": SubResource("Animation_6hlkq")
+}
 
 [node name="Villain" type="CharacterBody2D"]
 collision_layer = 0
@@ -11,11 +162,13 @@ collision_mask = 0
 script = ExtResource("1_fcj33")
 
 [node name="SpriteVillain" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0.419608, 0.188235, 1)
 scale = Vector2(0.515625, 1)
 texture = ExtResource("2_k6gy8")
 
 [node name="SpriteSled" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0.682353, 0.235294, 1)
 position = Vector2(0, 51)
 scale = Vector2(1.84375, 0.65625)
@@ -29,6 +182,21 @@ wait_time = 0.8
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-60, 10)
+position = Vector2(-49, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 87)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_c7gs1")
+animation = &"throw"
+frame = 9
+offset = Vector2(0, -435)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jv21k")
+}
+autoplay = "idle"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
