@@ -26,3 +26,18 @@ func _physics_process(delta):
 		global_position.x = 80
 	if global_position.x > 900:
 		global_position.x = 900
+	
+	# teste: rebater
+	if Input.is_action_just_pressed("ui_accept"):
+		$AnimationPlayer.play("swing")
+	
+	if $AnimationPlayer.current_animation != "swing":
+		if Input.is_action_pressed("fever"):
+			$AnimationPlayer.play("dash")
+		else:
+			$AnimationPlayer.play("idle")
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "swing":
+		$AnimationPlayer.play("idle")

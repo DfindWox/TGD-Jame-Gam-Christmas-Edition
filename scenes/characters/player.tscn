@@ -1,12 +1,191 @@
-[gd_scene load_steps=4 format=3 uid="uid://w43wv2ukh5r2"]
+[gd_scene load_steps=21 format=3 uid="uid://w43wv2ukh5r2"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_ptvvu"]
 [ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="2_t064j"]
+[ext_resource type="Texture2D" uid="uid://cput38qg5ubsn" path="res://assets/images/Papai Noel Bom/Santa0000.png" id="3_076yk"]
+[ext_resource type="Texture2D" uid="uid://bravdcaqre664" path="res://assets/images/Papai Noel Bom/Santa0001.png" id="4_mwcf5"]
+[ext_resource type="Texture2D" uid="uid://1xom3qbnwf1f" path="res://assets/images/Papai Noel Bom/Santa0003.png" id="6_m402j"]
+[ext_resource type="Texture2D" uid="uid://bgiweaf8j706d" path="res://assets/images/Papai Noel Bom/Santa0005.png" id="8_j40br"]
+[ext_resource type="Texture2D" uid="uid://45njc31aey85" path="res://assets/images/Papai Noel Bom/Santa0006.png" id="9_qh2uf"]
+[ext_resource type="Texture2D" uid="uid://b3wmqa66pfp6r" path="res://assets/images/Papai Noel Bom/Santa0007.png" id="10_l8e0r"]
+[ext_resource type="Texture2D" uid="uid://c236p2c3sa4kc" path="res://assets/images/Papai Noel Bom/Santa0008.png" id="11_cve2e"]
+[ext_resource type="Texture2D" uid="uid://drf3b3gnik6hn" path="res://assets/images/Papai Noel Bom/Santa0009.png" id="12_n380a"]
+[ext_resource type="Texture2D" uid="uid://cfrpr3jb77tln" path="res://assets/images/Papai Noel Bom/Santa0010.png" id="13_iy1w1"]
+[ext_resource type="Texture2D" uid="uid://j2vl3b06b7sc" path="res://assets/images/Papai Noel Bom/Santa0011.png" id="14_25vw2"]
+[ext_resource type="Texture2D" uid="uid://c2rhimrugglix" path="res://assets/images/Papai Noel Bom/Santa0012.png" id="15_ifl0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su6xv"]
 size = Vector2(158, 106)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rqd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_076yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mwcf5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_m402j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j40br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qh2uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l8e0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cve2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_n380a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iy1w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_25vw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ifl0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ifl0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ifl0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ifl0v")
+}],
+"loop": false,
+"name": &"swing",
+"speed": 24.0
+}]
+
+[sub_resource type="Animation" id="Animation_cg7ob"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteSanta:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSpriteSanta:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.19), Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_3umbs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteSanta:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSpriteSanta:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_ux570"]
+resource_name = "swing"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteSanta")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"swing", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5t5w1"]
+resource_name = "dash"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteSanta:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSpriteSanta:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.23, 0.17), Vector2(0.23, 0.18), Vector2(0.23, 0.17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_236kc"]
+_data = {
+"RESET": SubResource("Animation_3umbs"),
+"dash": SubResource("Animation_5t5w1"),
+"idle": SubResource("Animation_cg7ob"),
+"swing": SubResource("Animation_ux570")
+}
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 8
 script = ExtResource("1_ptvvu")
 
 [node name="SpriteSantaClaus" type="Sprite2D" parent="."]
@@ -23,3 +202,19 @@ texture = ExtResource("2_t064j")
 visible = false
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_su6xv")
+
+[node name="AnimatedSpriteSanta" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 55)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_0rqd8")
+animation = &"idle"
+autoplay = "swing"
+offset = Vector2(233.333, -413.333)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_236kc")
+}
+autoplay = "idle"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

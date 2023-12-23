@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dxo888f2j3ish"]
 
 [ext_resource type="Script" path="res://src/Bullet.gd" id="1_ibv5s"]
-[ext_resource type="Texture2D" uid="uid://drgo5el3u62ys" path="res://assets/images/PLACEHOLDER_icons8-anvil-60.png" id="2_72twh"]
+[ext_resource type="Texture2D" uid="uid://c13idntio7thm" path="res://assets/images/Bigorna_small.png" id="2_o6coc"]
 [ext_resource type="AudioStream" uid="uid://qf38gc3y4i5v" path="res://assets/sfx/item_falling.ogg" id="3_3omem"]
 [ext_resource type="AudioStream" uid="uid://buseb1mw7dim" path="res://assets/sfx/anvil_falling.ogg" id="4_3bigv"]
 [ext_resource type="AudioStream" uid="uid://b3g4vlgyy5bak" path="res://assets/sfx/higgs01_yay.wav" id="5_70ox7"]
@@ -10,18 +10,19 @@
 radius = 40.0
 
 [node name="Bullet" type="RigidBody2D"]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_ibv5s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_72twh")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_o6coc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w2mac")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(2.7, 2.7)
 
 [node name="sfx_falling" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3omem")

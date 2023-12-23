@@ -1,27 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt1tf8k3v7p1b"]
+[gd_scene load_steps=5 format=3 uid="uid://dt1tf8k3v7p1b"]
 
 [ext_resource type="Script" path="res://scenes/levels/parallaxes/NightParallaxBackground.gd" id="1_2r8my"]
 [ext_resource type="Texture2D" uid="uid://c22025o4jrsib" path="res://assets/images/Fundo.png" id="2_u5sn8"]
 [ext_resource type="Texture2D" uid="uid://fx5p2e4eq2x3" path="res://assets/images/Casas.png" id="3_qab5l"]
+[ext_resource type="Texture2D" uid="uid://calsj8kaltdgs" path="res://assets/images/Nuvens.png" id="3_tslnw"]
 
 [node name="NightParallaxBackground" type="ParallaxBackground"]
 script = ExtResource("1_2r8my")
 
 [node name="ParallaxSky" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(1800, 0)
+motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxSky"]
-position = Vector2(575.111, 323.5)
-scale = Vector2(0.599074, 0.599074)
+position = Vector2(576, 325)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_u5sn8")
+
+[node name="ParallaxClouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxClouds"]
+position = Vector2(1152, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_tslnw")
 
 [node name="ParallaxHouses" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(2, 2)
-motion_mirroring = Vector2(1462, 0)
+motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxHouses"]
-position = Vector2(1157.33, 321.5)
-scale = Vector2(0.602778, 0.602778)
+position = Vector2(0, 380)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_qab5l")
 region_rect = Rect2(0, 256, 2304, 1024)

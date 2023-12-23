@@ -21,7 +21,7 @@ func set_present_count(value):
 
 func set_strike_count(value):
 	#print_debug("strikes: ", value)
-	%StrikesBarFront.size.x = clamp(value*60,0,180)
+	%StrikesBarFront.size.x = clamp(value*128,0,128*3)
 
 
 
