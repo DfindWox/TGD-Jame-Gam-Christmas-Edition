@@ -8,9 +8,6 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_y2sx7")
-required_score = 20
-chance_for_anvil = 0.7
-throw_timer = 0.6
 
 [node name="NightParallaxBackground" parent="." instance=ExtResource("2_jyvii")]
 

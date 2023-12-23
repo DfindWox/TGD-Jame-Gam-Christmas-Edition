@@ -10,7 +10,7 @@
 script = ExtResource("1_ikg1b")
 required_score = 50
 chance_for_anvil = 0.4
-throw_timer = 0.4
+throw_timer = 0.3
 
 [node name="NightParallaxBackground" parent="." instance=ExtResource("2_5jxfn")]
 
