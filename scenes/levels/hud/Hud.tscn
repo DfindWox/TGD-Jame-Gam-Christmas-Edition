@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/levels/hud/Hud.gd" id="2_i7xkb"]
 [ext_resource type="Theme" uid="uid://yxnf3f24u3jl" path="res://resources/themes/default.tres" id="2_syobf"]
-[ext_resource type="Texture2D" uid="uid://rwp1t86e7k6i" path="res://assets/images/icons8-present-100.png" id="3_kuim1"]
-[ext_resource type="Texture2D" uid="uid://drgo5el3u62ys" path="res://assets/images/icons8-anvil-60.png" id="4_dgpr3"]
+[ext_resource type="Texture2D" uid="uid://rwp1t86e7k6i" path="res://assets/images/PLACEHOLDER_icons8-present-100.png" id="3_kuim1"]
+[ext_resource type="Texture2D" uid="uid://drgo5el3u62ys" path="res://assets/images/PLACEHOLDER_icons8-anvil-60.png" id="5_4jal6"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("2_i7xkb")
@@ -64,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("4_dgpr3")
+texture = ExtResource("5_4jal6")
 stretch_mode = 1
 
 [node name="StrikesBarFront" type="TextureRect" parent="MarginContainer/VBoxContainer/StrikesBar"]
@@ -72,6 +72,6 @@ unique_name_in_owner = true
 layout_mode = 1
 offset_bottom = 60.0
 size_flags_horizontal = 0
-texture = ExtResource("4_dgpr3")
+texture = ExtResource("5_4jal6")
 expand_mode = 1
 stretch_mode = 1

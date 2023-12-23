@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drgo5el3u62ys"
-path="res://.godot/imported/icons8-anvil-60.png-4aa46415aad87406ed273912cb1d2a7b.ctex"
+uid="uid://dm5j32wjsume7"
+path="res://.godot/imported/Presentes.png-f3a10b6a4e90d5513d69a25aef7f3f37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/icons8-anvil-60.png"
-dest_files=["res://.godot/imported/icons8-anvil-60.png-4aa46415aad87406ed273912cb1d2a7b.ctex"]
+source_file="res://assets/images/Presentes.png"
+dest_files=["res://.godot/imported/Presentes.png-f3a10b6a4e90d5513d69a25aef7f3f37.ctex"]
 
 [params]
 

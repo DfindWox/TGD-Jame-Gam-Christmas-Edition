@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dxo888f2j3ish"]
 
 [ext_resource type="Script" path="res://src/Bullet.gd" id="1_ibv5s"]
-[ext_resource type="Texture2D" uid="uid://drgo5el3u62ys" path="res://assets/images/icons8-anvil-60.png" id="2_n0jmp"]
+[ext_resource type="Texture2D" uid="uid://drgo5el3u62ys" path="res://assets/images/PLACEHOLDER_icons8-anvil-60.png" id="2_72twh"]
 [ext_resource type="AudioStream" uid="uid://qf38gc3y4i5v" path="res://assets/sfx/item_falling.ogg" id="3_3omem"]
 [ext_resource type="AudioStream" uid="uid://buseb1mw7dim" path="res://assets/sfx/anvil_falling.ogg" id="4_3bigv"]
 [ext_resource type="AudioStream" uid="uid://b3g4vlgyy5bak" path="res://assets/sfx/higgs01_yay.wav" id="5_70ox7"]
@@ -16,7 +16,7 @@ script = ExtResource("1_ibv5s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_n0jmp")
+texture = ExtResource("2_72twh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w2mac")

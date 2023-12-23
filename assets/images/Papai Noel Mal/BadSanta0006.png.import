@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxwprbvyxl4h3"
-path="res://.godot/imported/christian-lue-lHar9qDZPyI-unsplash-blur.png-320c1d6472dcd51d9d46e9609a80d8b2.ctex"
+uid="uid://dd6g7klgh7vuk"
+path="res://.godot/imported/BadSanta0006.png-cfb261abce5d14cc132695949b1e5d0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/christian-lue-lHar9qDZPyI-unsplash-blur.png"
-dest_files=["res://.godot/imported/christian-lue-lHar9qDZPyI-unsplash-blur.png-320c1d6472dcd51d9d46e9609a80d8b2.ctex"]
+source_file="res://assets/images/Papai Noel Mal/BadSanta0006.png"
+dest_files=["res://.godot/imported/BadSanta0006.png-cfb261abce5d14cc132695949b1e5d0c.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://yxnf3f24u3jl" path="res://resources/themes/default.tres" id="1_moinm"]
 [ext_resource type="Script" path="res://scenes/menu/CreditsScreen.gd" id="1_rmg0y"]
-[ext_resource type="Texture2D" uid="uid://dxwprbvyxl4h3" path="res://assets/images/christian-lue-lHar9qDZPyI-unsplash-blur.png" id="3_p7t7p"]
+[ext_resource type="Texture2D" uid="uid://dxwprbvyxl4h3" path="res://assets/images/PLACEHOLDER_christian-lue-lHar9qDZPyI-unsplash-blur.png" id="3_p7t7p"]
 
 [node name="CreditsScreen" type="Control"]
 layout_mode = 3

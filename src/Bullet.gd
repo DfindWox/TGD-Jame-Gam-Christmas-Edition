@@ -2,8 +2,8 @@ class_name Bullet
 extends RigidBody2D
 
 
-var texture_anvil = preload("res://assets/images/icons8-anvil-60.png")
-var texture_present = preload("res://assets/images/icons8-present-100.png")
+var texture_anvil = preload("res://assets/images/Bigorna.png")
+var texture_present = preload("res://assets/images/Presentes.png")
 
 enum Type {PRESENT, ANVIL}
 @export var item_type : Type = Type.PRESENT

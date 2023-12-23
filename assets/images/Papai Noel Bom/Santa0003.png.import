@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rwp1t86e7k6i"
-path="res://.godot/imported/icons8-present-100.png-5ceb44e2712a8f25557fda7d9fc9dfda.ctex"
+uid="uid://1xom3qbnwf1f"
+path="res://.godot/imported/Santa0003.png-500b5652948218c7e404324655c3ae6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/icons8-present-100.png"
-dest_files=["res://.godot/imported/icons8-present-100.png-5ceb44e2712a8f25557fda7d9fc9dfda.ctex"]
+source_file="res://assets/images/Papai Noel Bom/Santa0003.png"
+dest_files=["res://.godot/imported/Santa0003.png-500b5652948218c7e404324655c3ae6f.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 400.0
-var fever_speed = 1200.0
+const SPEED = 500.0
+var fever_speed = 1100.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

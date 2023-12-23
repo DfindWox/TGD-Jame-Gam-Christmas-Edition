@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/menu/TitleScreen.gd" id="1_p0uv0"]
 [ext_resource type="Theme" uid="uid://yxnf3f24u3jl" path="res://resources/themes/default.tres" id="2_spf1l"]
-[ext_resource type="Texture2D" uid="uid://h5au66vu6sis" path="res://assets/images/christian-lue-lHar9qDZPyI-unsplash.png" id="3_77500"]
+[ext_resource type="Texture2D" uid="uid://h5au66vu6sis" path="res://assets/images/PLACEHOLDER_christian-lue-lHar9qDZPyI-unsplash.png" id="3_77500"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
