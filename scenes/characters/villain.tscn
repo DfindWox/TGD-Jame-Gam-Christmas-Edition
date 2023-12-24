@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhvdavpxna35c"]
+[gd_scene load_steps=21 format=3 uid="uid://bhvdavpxna35c"]
 
 [ext_resource type="Script" path="res://src/Villain.gd" id="1_fcj33"]
 [ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="2_k6gy8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c6yh4h1hpjwul" path="res://assets/images/Papai Noel Mal/BadSanta0004.png" id="7_7k0pp"]
 [ext_resource type="Texture2D" uid="uid://6w3d2pafs3ye" path="res://assets/images/Papai Noel Mal/BadSanta0005.png" id="8_yvfiu"]
 [ext_resource type="Texture2D" uid="uid://dd6g7klgh7vuk" path="res://assets/images/Papai Noel Mal/BadSanta0006.png" id="9_oh21p"]
+[ext_resource type="Texture2D" uid="uid://usihcjujtpec" path="res://assets/images/star_04.png" id="10_4u3kx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wnl7"]
 
@@ -156,6 +157,30 @@ _data = {
 "throw": SubResource("Animation_6hlkq")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2t4k5"]
+blend_mode = 4
+
+[sub_resource type="Curve" id="Curve_5blr7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.426897), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d8w75"]
+curve = SubResource("Curve_5blr7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hkk2s"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(40, 1, 1)
+angle_max = 90.0
+direction = Vector3(-1, -0.5, 0)
+spread = 20.0
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.1
+scale_max = 0.15
+scale_curve = SubResource("CurveTexture_d8w75")
+
 [node name="Villain" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
@@ -197,6 +222,14 @@ libraries = {
 "": SubResource("AnimationLibrary_jv21k")
 }
 autoplay = "idle"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0.768627, 1)
+material = SubResource("CanvasItemMaterial_2t4k5")
+position = Vector2(-23, 92)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_hkk2s")
+texture = ExtResource("10_4u3kx")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

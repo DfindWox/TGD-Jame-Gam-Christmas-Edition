@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://w43wv2ukh5r2"]
+[gd_scene load_steps=30 format=3 uid="uid://w43wv2ukh5r2"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_ptvvu"]
 [ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="2_t064j"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://clsukxfachy52" path="res://assets/images/Papai Noel Bom/Win/SantaRindo0000.png" id="14_forkx"]
 [ext_resource type="Texture2D" uid="uid://c2rhimrugglix" path="res://assets/images/Papai Noel Bom/Santa0012.png" id="15_ifl0v"]
 [ext_resource type="Texture2D" uid="uid://bwci4t178u3tb" path="res://assets/images/Papai Noel Bom/Win/SantaRindo0001.png" id="15_jxa6s"]
+[ext_resource type="Texture2D" uid="uid://usihcjujtpec" path="res://assets/images/star_04.png" id="16_n8f1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su6xv"]
 size = Vector2(86, 34)
@@ -266,6 +267,30 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x24o3"]
 size = Vector2(186, 95)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wdj1c"]
+blend_mode = 4
+
+[sub_resource type="Curve" id="Curve_a7tpf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.426897), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fo3qc"]
+curve = SubResource("Curve_a7tpf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_od3kq"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(40, 1, 1)
+angle_max = 90.0
+direction = Vector3(-1, -0.5, 0)
+spread = 20.0
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.1
+scale_max = 0.15
+scale_curve = SubResource("CurveTexture_fo3qc")
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
@@ -309,6 +334,14 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHitzone"]
 position = Vector2(13, 8.5)
 shape = SubResource("RectangleShape2D_x24o3")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0.768627, 1)
+material = SubResource("CanvasItemMaterial_wdj1c")
+position = Vector2(-13, 61)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_od3kq")
+texture = ExtResource("16_n8f1u")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="AreaHitzone" to="." method="_on_area_hitzone_body_entered"]
