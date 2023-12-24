@@ -3,7 +3,13 @@ extends RigidBody2D
 
 
 var texture_anvil = preload("res://assets/images/Bigorna_small.png")
-var texture_present = preload("res://assets/images/Presentes_small.png")
+var texture_presents = [
+	preload("res://assets/images/Presentes_small.png"),
+	preload("res://assets/images/Presentes_1.png"),
+	preload("res://assets/images/Presentes_2.png"),
+	preload("res://assets/images/Presentes_3.png"),
+	preload("res://assets/images/Presentes_4.png")
+]
 
 enum Type {PRESENT, ANVIL}
 @export var item_type : Type = Type.PRESENT
@@ -19,7 +25,7 @@ func _ready():
 func set_sprite():
 	match item_type:
 		Type.PRESENT:
-			$Sprite2D.texture = texture_present
+			$Sprite2D.texture = texture_presents[randi_range(0,4)]
 			#$Sprite2D.scale = Vector2(1,1)*0.7
 		Type.ANVIL:
 			$Sprite2D.texture = texture_anvil
