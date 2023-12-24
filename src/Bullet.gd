@@ -33,6 +33,16 @@ func set_sprite():
 	#print_debug($Sprite2D.scale)
 
 
+func break_item():
+	match item_type:
+		Type.PRESENT:
+			$sfx_break_present.play()
+			#particulas aqui
+		Type.ANVIL:
+			$sfx_break_anvil.play()
+			pass
+
+
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	if not was_hit:
 		if item_type == Type.ANVIL:

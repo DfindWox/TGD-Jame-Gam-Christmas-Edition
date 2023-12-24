@@ -51,3 +51,4 @@ func _on_area_hitzone_body_entered(body):
 		$AnimationPlayer.play("swing")
 		body.was_hit = true
 		body.apply_central_impulse(Vector2.from_angle(deg_to_rad(330))*4000)
+		body.break_item()

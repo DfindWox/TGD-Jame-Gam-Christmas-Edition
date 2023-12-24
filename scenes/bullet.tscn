@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxo888f2j3ish"]
+[gd_scene load_steps=9 format=3 uid="uid://dxo888f2j3ish"]
 
 [ext_resource type="Script" path="res://src/Bullet.gd" id="1_ibv5s"]
 [ext_resource type="Texture2D" uid="uid://c13idntio7thm" path="res://assets/images/Bigorna_small.png" id="2_o6coc"]
 [ext_resource type="AudioStream" uid="uid://qf38gc3y4i5v" path="res://assets/sfx/item_falling.ogg" id="3_3omem"]
 [ext_resource type="AudioStream" uid="uid://buseb1mw7dim" path="res://assets/sfx/anvil_falling.ogg" id="4_3bigv"]
 [ext_resource type="AudioStream" uid="uid://b3g4vlgyy5bak" path="res://assets/sfx/higgs01_yay.wav" id="5_70ox7"]
+[ext_resource type="AudioStream" uid="uid://bxf4ol3m8hxcw" path="res://assets/sfx/present_break.ogg" id="6_4pcnw"]
+[ext_resource type="AudioStream" uid="uid://denqsu4dovuxy" path="res://assets/sfx/anvil_break.ogg" id="7_dpxp4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w2mac"]
 radius = 40.0
@@ -29,10 +31,17 @@ stream = ExtResource("3_3omem")
 
 [node name="sfx_anvil" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3bigv")
-volume_db = -2.811
 
 [node name="sfx_happy" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_70ox7")
 volume_db = -5.0
+
+[node name="sfx_break_present" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4pcnw")
+volume_db = -7.0
+
+[node name="sfx_break_anvil" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_dpxp4")
+volume_db = -3.0
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
