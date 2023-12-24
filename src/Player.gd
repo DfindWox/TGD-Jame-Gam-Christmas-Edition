@@ -31,8 +31,9 @@ func _physics_process(delta):
 	# teste: rebater
 	#if Input.is_action_just_pressed("ui_accept"):
 	#	$AnimationPlayer.play("swing")
-	
-	if $AnimationPlayer.current_animation != "swing":
+	if PlayerData.state == PlayerData.GameState.VICTORY:
+		$AnimationPlayer.play("win")
+	elif $AnimationPlayer.current_animation != "swing":
 		if Input.is_action_pressed("fever"):
 			$AnimationPlayer.play("dash")
 		else:
@@ -42,6 +43,7 @@ func _physics_process(delta):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "swing":
 		$AnimationPlayer.play("idle")
+
 
 
 func _on_area_hitzone_body_entered(body):

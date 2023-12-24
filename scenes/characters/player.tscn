@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://w43wv2ukh5r2"]
+[gd_scene load_steps=25 format=3 uid="uid://w43wv2ukh5r2"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_ptvvu"]
 [ext_resource type="Texture2D" uid="uid://j26bwiywbdqa" path="res://icon.svg" id="2_t064j"]
@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://drf3b3gnik6hn" path="res://assets/images/Papai Noel Bom/Santa0009.png" id="12_n380a"]
 [ext_resource type="Texture2D" uid="uid://cfrpr3jb77tln" path="res://assets/images/Papai Noel Bom/Santa0010.png" id="13_iy1w1"]
 [ext_resource type="Texture2D" uid="uid://j2vl3b06b7sc" path="res://assets/images/Papai Noel Bom/Santa0011.png" id="14_25vw2"]
+[ext_resource type="Texture2D" uid="uid://clsukxfachy52" path="res://assets/images/Papai Noel Bom/Win/SantaRindo0000.png" id="14_forkx"]
 [ext_resource type="Texture2D" uid="uid://c2rhimrugglix" path="res://assets/images/Papai Noel Bom/Santa0012.png" id="15_ifl0v"]
+[ext_resource type="Texture2D" uid="uid://bwci4t178u3tb" path="res://assets/images/Papai Noel Bom/Win/SantaRindo0001.png" id="15_jxa6s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su6xv"]
 size = Vector2(86, 34)
@@ -70,6 +72,17 @@ animations = [{
 "loop": false,
 "name": &"swing",
 "speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_forkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jxa6s")
+}],
+"loop": true,
+"name": &"win",
+"speed": 6.0
 }]
 
 [sub_resource type="Animation" id="Animation_3umbs"]
@@ -223,12 +236,31 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_jjtno"]
+resource_name = "win"
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteSanta")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"win", 1.0, false],
+"method": &"play"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_236kc"]
 _data = {
 "RESET": SubResource("Animation_3umbs"),
 "dash": SubResource("Animation_5t5w1"),
 "idle": SubResource("Animation_cg7ob"),
-"swing": SubResource("Animation_ux570")
+"swing": SubResource("Animation_ux570"),
+"win": SubResource("Animation_jjtno")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x24o3"]
@@ -261,6 +293,7 @@ scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_0rqd8")
 animation = &"idle"
 autoplay = "swing"
+frame_progress = 0.849607
 offset = Vector2(233.333, -413.333)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

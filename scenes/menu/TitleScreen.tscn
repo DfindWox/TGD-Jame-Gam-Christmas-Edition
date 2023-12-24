@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://2cr7pewmfk3o"]
+[gd_scene load_steps=5 format=3 uid="uid://2cr7pewmfk3o"]
 
 [ext_resource type="Script" path="res://scenes/menu/TitleScreen.gd" id="1_p0uv0"]
 [ext_resource type="Theme" uid="uid://yxnf3f24u3jl" path="res://resources/themes/default.tres" id="2_spf1l"]
 [ext_resource type="Texture2D" uid="uid://h5au66vu6sis" path="res://assets/images/PLACEHOLDER_christian-lue-lHar9qDZPyI-unsplash.png" id="3_77500"]
+[ext_resource type="AudioStream" uid="uid://btj44puwgtd4d" path="res://assets/music/IntroSong.wav" id="4_j4drf"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -25,12 +26,11 @@ expand_mode = 3
 
 [node name="LabelTitle" type="Label" parent="."]
 layout_mode = 2
-offset_left = -1.0
-offset_top = 140.0
-offset_right = 1151.0
-offset_bottom = 222.0
+offset_top = 154.0
+offset_right = 1152.0
+offset_bottom = 236.0
 theme_override_font_sizes/font_size = 60
-text = "James Games"
+text = "Papai Noel & Titio Joel"
 horizontal_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="."]
@@ -41,11 +41,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -137.0
-offset_top = 38.0
+offset_top = -28.0
 offset_right = 137.0
-offset_bottom = 174.0
+offset_bottom = 290.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 
 [node name="BtnPlay1" type="Button" parent="VBox"]
 layout_mode = 2
@@ -77,6 +78,11 @@ offset_bottom = -18.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "© The Guardian Dog Studio 2023"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_j4drf")
+volume_db = -3.0
+autoplay = true
 
 [connection signal="pressed" from="VBox/BtnPlay1" to="." method="_on_btn_play_1_pressed"]
 [connection signal="pressed" from="VBox/BtnPlay2" to="." method="_on_btn_play_2_pressed"]
