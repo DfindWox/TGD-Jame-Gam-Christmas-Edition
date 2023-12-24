@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgshrp658sobl"]
+[gd_scene load_steps=5 format=3 uid="uid://dgshrp658sobl"]
 
 [ext_resource type="Theme" uid="uid://yxnf3f24u3jl" path="res://resources/themes/default.tres" id="1_moinm"]
 [ext_resource type="Script" path="res://scenes/menu/CreditsScreen.gd" id="1_rmg0y"]
-[ext_resource type="Texture2D" uid="uid://dxwprbvyxl4h3" path="res://assets/images/PLACEHOLDER_christian-lue-lHar9qDZPyI-unsplash-blur.png" id="3_p7t7p"]
+[ext_resource type="Texture2D" uid="uid://c22025o4jrsib" path="res://assets/images/Fundo.png" id="3_74b4g"]
+[ext_resource type="Texture2D" uid="uid://cy8mmdiyq6rh6" path="res://assets/images/Logo TGD.png" id="4_y3vu0"]
 
 [node name="CreditsScreen" type="Control"]
 layout_mode = 3
@@ -18,18 +19,10 @@ script = ExtResource("1_rmg0y")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_p7t7p")
+texture = ExtResource("3_74b4g")
 expand_mode = 3
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 513.0
-offset_top = 302.0
-offset_right = 639.0
-offset_bottom = 325.0
-text = "credits go here"
+flip_h = true
+flip_v = true
 
 [node name="BtnReturn" type="Button" parent="."]
 layout_mode = 0
@@ -38,5 +31,69 @@ offset_top = 16.0
 offset_right = 122.0
 offset_bottom = 64.0
 text = "Return"
+
+[node name="LogoTgd" type="Sprite2D" parent="."]
+position = Vector2(981, 523)
+scale = Vector2(0.293103, 0.293103)
+texture = ExtResource("4_y3vu0")
+
+[node name="LabelCopyright" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -304.0
+offset_top = -41.0
+offset_right = -38.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "© The Guardian Dog Studio 2023"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.5
+offset_top = -51.0
+offset_right = 294.5
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 114
+
+[node name="PROGRAMAÇÃO" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "PROGRAMMING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Programadores" type="Label" parent="HBoxContainer/PROGRAMAÇÃO"]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 115.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 30
+text = "Natan Maia
+Meiqyu"
+
+[node name="PROGRAMAÇÃO2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "ART"
+
+[node name="Artistas" type="Label" parent="HBoxContainer/PROGRAMAÇÃO2"]
+layout_mode = 0
+offset_top = 63.0
+offset_right = 153.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 30
+text = "Potatoana"
 
 [connection signal="pressed" from="BtnReturn" to="." method="_on_btn_return_pressed"]
