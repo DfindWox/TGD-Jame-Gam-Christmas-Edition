@@ -15,5 +15,7 @@ func _ready():
 	
 	$Villain.set_timer_duration(throw_timer)
 	$Villain.chance_for_anvil = chance_for_anvil
+	
+	$music.play()
 
 

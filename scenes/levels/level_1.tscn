@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1jkst7r3wnxg"]
+[gd_scene load_steps=7 format=3 uid="uid://b1jkst7r3wnxg"]
 
 [ext_resource type="Script" path="res://scenes/levels/Level.gd" id="1_y2sx7"]
 [ext_resource type="PackedScene" uid="uid://dt1tf8k3v7p1b" path="res://scenes/levels/parallaxes/NightParallaxBackground.tscn" id="2_jyvii"]
 [ext_resource type="PackedScene" uid="uid://w43wv2ukh5r2" path="res://scenes/characters/player.tscn" id="3_kdhom"]
 [ext_resource type="PackedScene" uid="uid://bhvdavpxna35c" path="res://scenes/characters/villain.tscn" id="4_h1y7p"]
 [ext_resource type="PackedScene" uid="uid://byxx6xjtmttns" path="res://scenes/levels/hud/Hud.tscn" id="5_vj7cv"]
+[ext_resource type="AudioStream" uid="uid://dl6yetyw742yw" path="res://assets/music/santafuckedup.ogg" id="6_53e82"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_y2sx7")
@@ -18,3 +19,7 @@ position = Vector2(135, 440)
 position = Vector2(998, 165)
 
 [node name="Hud" parent="." instance=ExtResource("5_vj7cv")]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_53e82")
+bus = &"Music"
